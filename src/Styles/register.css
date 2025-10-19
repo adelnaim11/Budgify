@@ -1,0 +1,100 @@
+/* Reset & basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Container */
+.register-container {
+  max-width: 450px;
+  margin: 220px auto;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2575fc;
+  font-size: 2rem;
+}
+
+/* Alert messages */
+.alert {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #2575fc;
+}
+
+.input-box input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+}
+
+/* Button styling */
+.btn {
+  padding: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .register-container {
+    margin: 50px 20px;
+    padding: 30px 20px;
+  }
+  .register-container h2 { font-size: 1.6rem; }
+}

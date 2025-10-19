@@ -1,0 +1,148 @@
+:root {
+  --navbar-bg: rgba(0, 0, 0, 0.8);
+  --navbar-bg-scrolled: rgba(0, 0, 0, 1);
+  --accent-color: #ffa600;
+  --transition-speed: 0.4s;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--navbar-bg);
+  display: flex;
+  justify-content: center;
+  transition: background var(--transition-speed), padding var(--transition-speed);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: var(--navbar-bg-scrolled);
+  padding: 8px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.navbar-btn{
+  padding: 10px,20px;
+}
+.navbar-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+  transition: max-height 0.3s ease;
+}
+
+.navbar-menu li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0;
+  transition: color var(--transition-speed);
+}
+
+.navbar-menu li a:hover::after,
+.navbar-menu li a.active::after {
+  width: 100%;
+}
+
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+
+.login-btn a {
+  padding: 10px 20px !important;
+  border-radius: 25px;
+  background: rgb(47, 197, 10);
+  color: black;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn a:hover {
+  background: #e2e2e2;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background: var(--navbar-bg);
+    gap: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    max-height: 500px; 
+    padding: 15px 0;
+  }
+
+  .navbar-menu li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}

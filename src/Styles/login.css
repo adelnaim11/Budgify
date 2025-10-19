@@ -1,0 +1,81 @@
+:root {
+  --gradient-1: #6a11cb;
+  --gradient-2: #2575fc;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.8s ease-in-out;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+}
+
+.login-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #ddd;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #f1f1f1;
+}
+
+.error {
+  color: #ff8080;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  font-size: 0.9rem;
+  color: #eee;
+  margin-top: 1rem;
+}
+
+.footer a {
+  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+}
