@@ -44,7 +44,7 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-## Tech Stack
+## Languages used
 
 
 
