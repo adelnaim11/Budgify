@@ -18,7 +18,7 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-### 🧑‍💻 Public Pages
+### Public Pages
 
 - \*\*Landing Page\*\* with hero section, dynamic features, and carousel  
 
@@ -30,7 +30,7 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-### 🔐 Private Pages
+### Private Pages
 
 - \*\*User Dashboard\*\* 
 
