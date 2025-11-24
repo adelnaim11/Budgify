@@ -1,4 +1,4 @@
-\# Budgify – Personal Finance \& Budget Management Web App
+# Budgify – Personal Finance \& Budget Management Web App
 
 * Front End ONLY
 
@@ -14,19 +14,19 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-\## 🌟 Features
+## 🌟 Features
 
 
 
 \### 🧑‍💻 Public Pages
 
-\- \*\*Landing Page\*\* with hero section, dynamic features, and carousel  
+- \*\*Landing Page\*\* with hero section, dynamic features, and carousel  
 
-\- \*\*About Page\*\* with mission, team section, and CTA  
+- \*\*About Page\*\* with mission, team section, and CTA  
 
-\- \*\*Contact Page\*\* with message form + contact information  
+- \*\*Contact Page\*\* with message form + contact information  
 
-\- \*\*Responsive Navbar \& Footer\*\*
+- \*\*Responsive Navbar \& Footer\*\*
 
 
 
