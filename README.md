@@ -14,7 +14,7 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-## 🌟 Features
+## What this includes
 
 
 
