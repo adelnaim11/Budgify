@@ -18,7 +18,7 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-\### 🧑‍💻 Public Pages
+### 🧑‍💻 Public Pages
 
 - \*\*Landing Page\*\* with hero section, dynamic features, and carousel  
 
@@ -30,11 +30,11 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-\### 🔐 Private Pages
+### 🔐 Private Pages
 
-\- \*\*User Dashboard\*\* 
+- \*\*User Dashboard\*\* 
 
-\- \*\*Profile Page\*\* with:
+- \*\*Profile Page\*\* with:
 
 &nbsp; - Update name \& username  
 
@@ -44,19 +44,19 @@ The app includes a public-facing website plus dashboard/profile functionality.
 
 
 
-\## 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 
 
-\### Frontend
+### Frontend
 
-\- \*\*React.js\*\*
+- \*\*React.js\*\*
 
-\- \*\*React Router\*\*
+- \*\*React Router\*\*
 
-\- \*\*CSS Modules / Custom CSS\*\*
+- \*\*CSS Modules / Custom CSS\*\*
 
-\- \*\*Reusable Components\*\*
+- \*\*Reusable Components\*\*
 
 
 
