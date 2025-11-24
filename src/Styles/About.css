@@ -1,132 +1,226 @@
-/* Reset & basics */
-* {
+.about-page {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f9f9f9;
-  color: #333;
-}
-
-/* Hero Section */
 .about-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
   position: relative;
+  min-height: 70vh;
+  background: var(--faderhero);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
   overflow: hidden;
+;
 }
+
+.container-grid{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/Containers/Grid.svg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  z-index: 1; 
+}
+
+
 
 .about-hero::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('https://source.unsplash.com/1600x900/?finance,abstract') center/cover no-repeat;
-  opacity: 0.15;
+  inset: 0;
+  background: var(--faderhero);
+  backdrop-filter: blur(20px);
   z-index: 0;
 }
 
-.about-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+.about-hero-content {
   position: relative;
-  z-index: 1;
-  animation: fadeInUp 1s ease forwards;
+  padding: 40px;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  animation: fadeIn 1.2s ease forwards;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-hero h1 {
+  font-size: 3.2rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .about-hero p {
   font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+}
+
+.about-mission {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #fff, var(--color-bg));
+}
+
+.about-mission h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.about-mission p {
   max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-team {
+  padding: 6rem 2rem;
+  background: linear-gradient(160deg, var(--color-primary-light) 10%, #ffffff 100%);
+  text-align: center;
+  position: relative;
+}
+
+.about-team h2 {
+  color: var(--color-primary-dark);
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.team-member img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0px solid var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  margin: 0.75rem 0;
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.team-member p {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.about-cta {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.3), transparent 60%);
+  z-index: 0;
+}
+
+.about-cta h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
-  animation: fadeInUp 1s 0.3s ease forwards;
 }
 
-/* Section */
-.about-section {
-  max-width: 1000px;
-  min-height: 100vh;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.about-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #2575fc;
+.about-cta p {
+  font-size: 1.15rem;
+  margin-bottom: 2.2rem;
   position: relative;
+  z-index: 1;
 }
 
-.about-section h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #6a11cb;
-  margin: 10px auto 0;
-  border-radius: 2px;
+.about-cta .btn-primary {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  color: var(--color-primary-dark);
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+/*Adel Was Here*/
+.about-cta .btn-primary:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+  transform: scale(1.05);
 }
 
-.about-section p {
-  font-size: 1rem;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #555;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mission & Vision */
-.mission-vision {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
+@media (max-width: 992px) {
+  .about-hero h1 { font-size: 2.6rem; }
+  .team-grid { gap: 1.8rem; }
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  flex: 1 1 300px;
-  min-width: 280px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (max-width: 600px) {
+  .about-hero { padding: 4rem 1.5rem; }
+  .about-hero h1 { font-size: 2rem; }
+  .about-mission, .about-team { padding: 4rem 1.5rem; }
+  .about-cta { padding: 4rem 1.5rem; border-radius: 0; }
+  .team-member { padding: 2rem 1rem; }
+  .team-grid{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.card h4 {
-  margin-bottom: 15px;
-  color: #6a11cb;
-}
-
-.card p {
-  color: #555;
-  font-size: 0.95rem;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .about-hero h1 { font-size: 2.2rem; }
-  .about-hero p { font-size: 1rem; }
-  .mission-vision { flex-direction: column; gap: 20px; }
+@media (max-width: 400px) {
+  .about-hero h1 { font-size: 1.7rem; }
+  .team-member h3 { font-size: 1.05rem; }
+  .about-cta h2 { font-size: 1.6rem; }
 }

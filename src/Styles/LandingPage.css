@@ -1,0 +1,367 @@
+
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--secondary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.landing-page::-webkit-scrollbar{
+  display: none;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+
+.carousel-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #111 20%, #222 100%);
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("./../assets/Containers/TrackExpense.webp") center/cover no-repeat;
+  opacity: 0.25;
+  filter: brightness(0.7);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  padding: 3rem 2rem;
+  background: var(--glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  animation: floatIn 1s ease forwards;
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, var(--primary), #8ae0b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-content a{
+  text-decoration: none;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-outline2,
+.btn-outline {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(58, 178, 114, 0.6);
+}
+
+.btn-outline  {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline2  {
+  border: 2px solid var(--primary);
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline:hover , .btn-outline2:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+
+.features-section {
+  background: var(--accent);
+  padding: 7rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.features-section h2 {
+  font-size: 2.7rem;
+  margin-bottom: 3.5rem;
+  color: var(--secondary);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  transform: translateY(0);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+
+.stats-section {
+  background: var(--accent);
+  padding: 6rem 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  text-align: center;
+  gap: 3rem;
+}
+
+.stat-card h3 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.stat-card:hover h3 {
+  transform: scale(1.1);
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+
+.cta-section {
+  background: linear-gradient(135deg, var(--primary), #8ae0b8);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section a {
+  text-decoration: none;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 50%);
+  z-index: 0;
+}
+
+.cta-section h2,
+.cta-section p,
+.btn-cta {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: white;
+  color: var(--primary);
+  border-radius: 40px;
+  font-weight: bold;
+  transition: var(--transition);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-cta:hover {
+  background: #f3f4f6;
+  transform: translateY(-5px);
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .features-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2.3rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 7rem 1.5rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+
+  .features-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2.2rem;
+  }
+
+  .cta-section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 6rem 1rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .feature-card {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .features-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .btn-cta {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+/*Adel Was Here*/

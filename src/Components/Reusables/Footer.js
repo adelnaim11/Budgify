@@ -1,44 +1,45 @@
 import React from "react";
-import "./Footer.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../../Styles/Header_Footer.css";
 
-const Footer = () => {
+const Footer =()=> {
   return (
-    <footer className="footer">
+    <footer className="footer-modern">
       <div className="footer-container">
-
-        <div className="footer-column">
-          <h4 className="footer-title">Budgify</h4>
-          <p>Take control of your financial future with our budget management tools.</p>
+        <div className="footer-section brand">
+          <h2 className="footer-logo">Budgify</h2>
+          <p>
+            Empowering you to take control of your finances with smart budgeting and clear insights.
+          </p>
         </div>
 
-
-        <div className="footer-column">
-          <h5 className="footer-title">Quick Links</h5>
-          <ul className="footer-links">
+        <div className="footer-section links">
+          <h4>Quick Links</h4>
+          <ul>
             <li><a href="/">Home</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="/login">Login</a></li>
           </ul>
         </div>
 
-
-        <div className="footer-column">
-          <h5 className="footer-title">Follow Us</h5>
-          <div className="footer-social">
-            <a href="https://www.facebook.com/">Facebook</a>
-            <a href="https://twitter.com/">Twitter</a>
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.linkedin.com/">LinkedIn</a>
+        <div className="footer-section contact">
+          <h4>Contact</h4>
+          <p>Email: support@budgify.com</p>
+          <p>Phone: +961 76445285</p>
+          <div className="social-icons">
+            <a href="#"><i className="bi bi-facebook"></i></a>
+            <a href="#"><i className="bi bi-twitter-x"></i></a>
+            <a href="#"><i className="bi bi-instagram"></i></a>
+            <a href="#"><i className="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <small>&copy; 2025 Budgify. All rights reserved.</small>
+        <p>© 2025 Budgify — A Web-advanced Project Made By Adel Naim</p>
       </div>
     </footer>
   );
-};
-
+}
 export default Footer;

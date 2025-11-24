@@ -1,43 +1,79 @@
-import React from "react";
-import "./../Styles/About.css";
+import React, { useEffect, useState } from "react";
+import "../Styles/About.css";
+import TeamLogo from "../assets/Logo/team.png";
+import Arrows from "../Components/Reusables/Arrows";
 
-const About = () => {
-  const content = {
-    heroTitle: "Welcome to Budgify",
-    heroSubtitle: "Smart budgeting, effortless tracking, secure data.",
-    whoWeAre:
-      "Budgify is a modern finance platform that helps you manage budgets, track expenses, and achieve your financial goals with ease.",
-    mission:
-      "To empower individuals to take control of their finances with intuitive, easy-to-use tools.",
-    vision:
-      "To create a world where managing money is simple, stress-free, and secure."
+const AboutPage = () => {
+  const staticData = {
+    about: {
+      hero_title: "About Budgify",
+      hero_description: "Your smart tool to take control of your finances.",
+      mission_title: "Our Mission",
+      mission_text:
+        "We aim to simplify personal finance and empower people to make smarter money decisions.",
+      cta_title: "Ready to get started?",
+      cta_text: "Join thousands of users already managing their finances better.",
+      cta_link: "/signup",
+    },
+    team: [
+      { id: 1, name: "John Carter", role: "Founder & CEO" },
+      { id: 2, name: "Emily Smith", role: "Lead Developer" },
+      { id: 3, name: "Mark Johnson", role: "UI/UX Designer" },
+    ],
   };
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    setData(staticData);
+  }, []);
+
+  if (!data) return <div className="loading">Loading...</div>;
+
+  const { about, team } = data;
 
   return (
     <div className="about-page">
-
       <section className="about-hero">
-        <h1>{content.heroTitle}</h1>
-        <p>{content.heroSubtitle}</p>
+        <div className="about-hero-content">
+          <h1>{about.hero_title}</h1>
+          <p>{about.hero_description}</p>
+        </div>
+        {Arrows()}
+        <div className="container-grid"></div>
       </section>
 
-      <section className="about-section">
-        <h2>Who We Are</h2>
-        <p>{content.whoWeAre}</p>
+      <section className="about-mission">
+        <div className="container">
+          <h2>{about.mission_title}</h2>
+          <p>{about.mission_text}</p>
+        </div>
+      </section>
 
-        <div className="mission-vision">
-          <div className="card">
-            <h4>Our Mission</h4>
-            <p>{content.mission}</p>
-          </div>
-          <div className="card">
-            <h4>Our Vision</h4>
-            <p>{content.vision}</p>
+      <section className="about-team">
+        <div className="container">
+          <h2>Meet the Team</h2>
+          <div className="team-grid">
+            {team.map((member) => (
+              <div key={member.id} className="team-member">
+                <img src={TeamLogo} alt={member.name} />
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
+
+      <section className="about-cta">
+        <h2>{about.cta_title}</h2>
+        <p>{about.cta_text}</p>
+        <a href={about.cta_link} className="btn-primary">
+          Get Started
+        </a>
       </section>
     </div>
   );
 };
 
-export default About;
+export default AboutPage;

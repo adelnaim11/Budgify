@@ -1,26 +1,23 @@
-.login-page {
+.signup-page {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--color-primary-light, #b2f0ce), #ffffff);
+  background: linear-gradient(135deg, #b2f0ce, #ffffff);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login-container {
+.signup-container {
   background: #fff;
+  margin: 1rem 0rem;
   padding: 3rem 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  max-width: 400px;
+  max-width: 450px;
   width: 90%;
   text-align: center;
   z-index: 1;
-}
-
-.error-message{
-  color: red;
 }
 
 .container-decoration {
@@ -33,35 +30,33 @@
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
-  z-index: 0;
+  z-index: 0; 
 }
 
-
-
-.login-title {
+.signup-title {
   color: var(--color-primary-dark);
   margin-bottom: 0.5rem;
 }
 
-.login-subtitle {
+.signup-subtitle {
   color: var(--color-muted);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
-.login-form .form-group {
+.signup-form .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
 }
 
-.login-form label {
+.signup-form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--color-text);
 }
 
-.login-form input {
+.signup-form input {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 8px;
@@ -72,12 +67,12 @@
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-form input:focus {
+.signup-form input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(59, 178, 115, 0.2);
 }
 
-.btn-login {
+.btn-signup {
   width: 100%;
   padding: 0.75rem 1rem;
   background: var(--color-primary);
@@ -90,21 +85,21 @@
   transition: background 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-signup:hover {
   background: var(--color-primary-dark);
 }
 
-.login-footer {
+.signup-footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
 }
 
-.login-footer a {
+.signup-footer a {
   color: var(--color-primary);
   text-decoration: none;
 }
 
-.login-footer a:hover {
+.signup-footer a:hover {
   text-decoration: underline;
 }
 /*Adel Was Here*/

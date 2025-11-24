@@ -1,30 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Header from "./Components/Reusables/Navbar";
-import Footer from "./Components/Reusables/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Services from "./Pages/Services";
+import "./App.css"
 import Login from "./Pages/Login";
-import Register from "./Pages/Register";
-import Contact from "./Pages/Contact";
-import "./App.css";
-import Navbar from "./Components/Reusables/Navbar";
+import LandingPage from "./Pages/LandingPage";
+import Header from "./Components/Reusables/Header";
+import Footer from "./Components/Reusables/Footer";
+import SignupPage from "./Pages/Signup";
+import AboutPage from "./Pages/About";
+import ContactPage from "./Pages/Contact";
+import Dashboard from "./Pages/dashboard";
+import ProfilePage from "./Pages/ProfilePage";
 
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
     <Router>
-      <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home />} />        
-          <Route path="/about" element={<About />} /> 
-          <Route path="/services" element={<Services />} /> 
-          <Route path="/login" element={<Login />} />  
-          <Route path="/register" element={<Register />} />
-          <Route path="/contact" element={<Contact />} /> 
-        </Routes>
-    <Footer/>
+      <Header user={user} setUser={setUser} />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact-us" element={<ContactPage />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/profile" element={<ProfilePage/>} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

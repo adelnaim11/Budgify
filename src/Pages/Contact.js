@@ -1,121 +1,111 @@
-import React, { useState } from "react";
-import "./../Styles/Contact.css"; 
+import React, { useEffect, useState } from "react";
+import "../Styles/Contact.css";
+import Arrows from "../Components/Reusables/Arrows";
 
-const Contact = () => {
+const ContactPage = () => {
+  const [formSent, setFormSent] = useState(false);
+
+  const contact = {
+    title: "Our Contact Information",
+    email: "support@budgify.com",
+    phone: "+123 456 789",
+    address: "123 Finance Street, Budget City",
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: ""
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
+    alert(
+      `Message Sent!\n\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
+    );
 
-    try {
-      const res = await fetch("/api/contact.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send message. Please try again later.");
-    }
+    setFormSent(true);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="contact-page">
-
       <section className="contact-hero">
-        <h1>Contact Us</h1>
-        <p>Have questions or need support? Reach out to us anytime.</p>
+        <div className="contact-hero-content">
+          <h1>Contact Us</h1>
+          <p>
+            Have questions or feedback? Reach out to our team and we’ll get back
+            to you promptly.
+          </p>
+        </div>
+        {Arrows()}
       </section>
 
-
-      <section className="contact-section">
-        {submitted ? (
-          <div className="contact-success">
-            <h2>Thank you, {formData.name}!</h2>
-            <p>Your message has been received. We’ll get back to you soon.</p>
-          </div>
-        ) : (
+      <section className="contact-form-section">
+        <div className="container">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Your Name</label>
+              <label>Name</label>
               <input
                 type="text"
-                id="name"
                 name="name"
-                placeholder="John Doe"
                 value={formData.name}
                 onChange={handleChange}
                 required
+                placeholder="Your Name"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
+              <label>Email</label>
               <input
                 type="email"
-                id="email"
                 name="email"
-                placeholder="you@example.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
+                placeholder="you@example.com"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="How can we help you?"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Your Message</label>
+              <label>Message</label>
               <textarea
-                id="message"
                 name="message"
-                rows="6"
-                placeholder="Write your message here..."
                 value={formData.message}
                 onChange={handleChange}
+                rows="5"
                 required
+                placeholder="Your message..."
               ></textarea>
             </div>
 
-            <div className="form-actions">
-              <button type="submit" className="btn-custom">
-                Send Message
-              </button>
-            </div>
+            <button
+              type="submit"
+              className={formSent ? "btn-success" : "btn-contact"}
+              disabled={formSent}
+            >
+              {formSent ? "Message was successfully sent!" : "Send Message"}
+            </button>
           </form>
-        )}
+
+          <div className="contact-info">
+            <h3>{contact.title}</h3>
+            <p>Email: {contact.email}</p>
+            <p>Phone: {contact.phone}</p>
+            <p>Address: {contact.address}</p>
+          </div>
+        </div>
       </section>
+
+      <div className="container-grid"></div>
     </div>
   );
 };
 
-export default Contact;
+export default ContactPage;

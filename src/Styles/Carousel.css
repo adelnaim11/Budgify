@@ -1,0 +1,152 @@
+:root {
+  --color-primary: #3bb273;
+  --color-primary-dark: #2b7a4b;
+}
+
+
+.carousel-section {
+  height: 100vh;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+.carousel-section::-webkit-scrollbar{
+  display: none;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1);
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.carousel-caption p {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 2rem;
+  color: #fff;
+  display: inline-block;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.carousel-caption p:hover {
+  transform: scale(1.05);
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.3s;
+}
+/*Adel Was Here*/
+.carousel-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.indicator.active {
+  background: var(--color-primary-dark);
+  transform: scale(1.3);
+}
+
+@media (max-width: 1024px) {
+  .carousel-caption p {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-section {
+    height: 80vh;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+  .carousel-btn {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section {
+    height: 70vh;
+  }
+  .carousel-caption p {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
